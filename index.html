@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cats</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet" />
+    <script src='./js/jQuery-3.2.1.js'></script>
+    <script src="./js/vue-2.6.10.js" defer></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/index.js" defer></script>
+  </head>
+ 
+  <body>
+    <div id="app">
+
+      <select v-model="selectedName">
+          <option v-for="(breed, index) in breeds">{{ breeds[index].name }}</option>
+      </select>
+
+      <div class="container">
+        <div id="cat-row" class="row">
+          <div v-for="(image, index) in images" class="cat-col">
+            <img :src="images[index]">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

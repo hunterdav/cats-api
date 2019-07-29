@@ -1,0 +1,52 @@
+@import 'partials/variables';
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+/* ----- DEFAULTS ----- */
+
+* {
+    box-sizing: border-box;
+  }
+
+html {
+  overflow: scroll;
+}
+
+*, html, body {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+body {
+  background: white;
+}
+
+select {
+  position: relative;
+  width: 200px;
+  margin: .75em 0;
+  left: calc(50% - 200px / 2);
+}
+
+.cat-col {
+  @include make-col-ready();
+  text-align: center;
+  padding: 0;
+  border: 1px solid white;
+  overflow: hidden;
+  @include media-breakpoint-up('xs') {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up('sm') {
+    @include make-col(6);
+  }
+  @include media-breakpoint-up('lg') {
+    @include make-col(3);
+  }
+  & img {
+    position: relative;
+    max-width: 275px;
+    max-height: 200px;
+  }
+}
